@@ -1,3 +1,9 @@
+powertop (2.11-1build3) focal; urgency=medium
+
+  * No-change rebuild for libgcc-s1 package name change.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sat, 21 Mar 2020 13:29:06 +0100
+
 powertop (2.11-1build1) focal; urgency=medium
 
   * No-change rebuild for libgcc-s1 package name change.
@@ -78,7 +84,7 @@ powertop (2.7-1~exp1) experimental; urgency=medium
 
 powertop (2.6.1-1) unstable; urgency=medium
 
-  * debian/watch: adjust to new URL. 
+  * debian/watch: adjust to new URL.
   * Change architectures to linux-any, since ia64 is not a release
     architecture anymore.
   * New upstream release.
@@ -182,7 +188,7 @@ powertop (1.97-2.1) unstable; urgency=low
 powertop (1.97-2) unstable; urgency=low
 
   * Fix a build failure on ia64
-  * Add a return(0) at the end of csstoh.c to 
+  * Add a return(0) at the end of csstoh.c to
     as sparc seems to defaults to exit code 3
 
  -- Patrick Winnertz <winnie@debian.org>  Thu, 17 Mar 2011 16:24:40 +0100
@@ -211,7 +217,7 @@ powertop (1.13-1.1) unstable; urgency=low
 
 powertop (1.13-1) unstable; urgency=low
 
-  * New upstream version 
+  * New upstream version
     + Should fix FTBFS an alpha (Closes: #570662)
     + Fix crash with too long config files (Closes: #589438)
 
@@ -220,11 +226,11 @@ powertop (1.13-1) unstable; urgency=low
 powertop (1.13~pre20100125-1) unstable; urgency=low
 
   * Package git snapshot from 2010-01-25 (Closes: #563498)
-    - fix reporting of incorrect wattage 
+    - fix reporting of incorrect wattage
       (Closes: #497929, #558776)
     - doesn't exit when xterm is resized (Closes: #488973)
     - show P-states again in some rare cases (Closes: #562516)
-      at least this bug is not longer reproducable with this 
+      at least this bug is not longer reproducable with this
       new version
     - number of wakeups should be now correct (Closes: #502596)
     - manpage contains now more informations (Closes: #470498)
@@ -244,7 +250,7 @@ powertop (1.11-1) unstable; urgency=low
      + patches/add-support-for-charge_now.dpatch
      + patches/fix-suggest-usb-autosuspend.dpatch
      + patches/fix-hal-disable-polling.dpatch
- 
+
 
  -- Patrick Winnertz <winnie@debian.org>  Tue, 13 Jan 2009 00:02:01 +0100
 
@@ -264,7 +270,7 @@ powertop (1.10-1) unstable; urgency=low
   * powertop now quits if it get a EOF (Closes: 458984)
   * Updated watch file (Closes: #486509)
   * Removed usb patch, source has changed completely. hopefully it was fixed
-    by upstream.  
+    by upstream.
 
  -- Patrick Winnertz <winnie@debian.org>  Mon, 16 Jun 2008 23:55:10 +0200
 
@@ -273,7 +279,7 @@ powertop (1.9-2) unstable; urgency=low
   * Changed my maintainer address
   * Bumped Standards-Version to 3.7.3.
   * Instead of using /dev/scd0 as disk drive use /dev/cdrom for
-    hal-disable-polling (Created patch fix-hal-disable-polling.dpatch) 
+    hal-disable-polling (Created patch fix-hal-disable-polling.dpatch)
     (Closes: #443594)
   * This time fix really the usb autosuspend issue. (Closes: #444817)
   * Add a Homepage field to control.
@@ -289,7 +295,7 @@ powertop (1.9-1) unstable; urgency=low
 
 powertop (1.8-1) unstable; urgency=low
 
-  * Packaging new upstream release. 
+  * Packaging new upstream release.
   * Correct the dependency to laptop-mode-tools. (Closes: #438616)
   * Correct the command line syntax of hal-disable-polling (Closes: #435882)
   * Allow powertop to build on all archs since some information are still
@@ -353,7 +359,7 @@ powertop (1.4-2) unstable; urgency=low
   [ Patrick Winnertz ]
   * Fixed FTBFS, by depending on libncurses5-dev (Closes: #426235)
   * Uses $(CURDIR) instead of `pwd` in rules.
-  * Upload sponsored by Petter Reinholdtsen 
+  * Upload sponsored by Petter Reinholdtsen
 
  -- Patrick Winnertz <patrick.winnertz@skolelinux.org>  Sun, 27 May 2007 17:59:38 +0200
 
