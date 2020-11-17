@@ -1,3 +1,13 @@
+Taken from ubuntu 2004 arm repos. The yoga c630 arm6 laptop does not survive
+the cpu wiggle max_Scaling_frequency reapply, so I didabled it. So far so good.
+Without this patch my cpu speeds would fall and stay at the lowest possible
+freqs.
+In order to build natively I had to uninstall autoconf-archive to get around
+"too many loops" error and I had to replace the pthread check in
+configure.ac with CXXFLAGS, I left the original as configure.ac-og if your
+build enviroment is better then mine and want to change it.
+
+
 ﻿Build dependencies
 ------------------
 PowerTOP uses C++, and expects g++ and libstdc++ to be functional
@@ -101,13 +111,13 @@ Outputting a report
 When invoking PowerTOP without arguments, PowerTOP starts in interactive mode.
 However, for reporting bugs etc there is a special reporting modes:
 
-For an HTML formatted report simply execute PowerTOP with the following,  
+For an HTML formatted report simply execute PowerTOP with the following,
 
 powertop --html
 
 which will create a "powertop.html" file which is static and can be sent to
-others to help diagnose power issues. Additionally has the feature of showing 
-the tunables executions within the report as a reference. 
+others to help diagnose power issues. Additionally has the feature of showing
+the tunables executions within the report as a reference.
 
 Note for the developers: If you make changes on the report format please
 make sure that the output can be cleanly validated by the W3C Markup
@@ -115,15 +125,15 @@ Validation Service and W3C CSS Validation Service:
  * http://validator.w3.org/#validate_by_upload
  * http://jigsaw.w3.org/css-validator/#validate_by_upload
 
-For a CSV formatted report, simply execute PowerTOP with the following, 
+For a CSV formatted report, simply execute PowerTOP with the following,
 
-Powertop --csv 
+Powertop --csv
 
-which will create a “powertop.csv” file which is static and can be used in 
-reporting, diagnoses, and analytical data analysis. 
+which will create a “powertop.csv” file which is static and can be used in
+reporting, diagnoses, and analytical data analysis.
 
-Also you can set the number of iterations, and duration of test, in which case 
-all reports will time stamp for you. 
+Also you can set the number of iterations, and duration of test, in which case
+all reports will time stamp for you.
 
 Calibrating & Power Numbers
 ---------------------------
@@ -142,7 +152,7 @@ at least once; this will cycle through various display brightness levels
 Code from other open source projects
 ------------------------------------
 PowerTOP contains some code from other open source projects; we'd like to
-thank the authors of those projects for their work. 
+thank the authors of those projects for their work.
 Specifically PowerTOP contains code from
 
 Parse Event Library - Copyright 2009, 2010 Red Hat Inc  Steven Rosted <srostedt@redhat.com>
