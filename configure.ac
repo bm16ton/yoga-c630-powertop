@@ -38,16 +38,16 @@ AC_PROG_CC
 AC_PROG_INSTALL
 AM_PROG_CC_C_O
 GCC_FORTIFY_SOURCE_CC
-AX_CXX_COMPILE_STDCXX_11([noext], [mandatory])
+#AX_CXX_COMPILE_STDCXX_11([noext], [mandatory])
 
 # Checks for libraries.
-AX_PTHREAD([
-    LIBS="$PTHREAD_LIBS $LIBS"
-    CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
-    CC="$PTHREAD_CC"
-  ], [
-    AC_MSG_ERROR([Could not configure pthreads support])
-])
+#AX_PTHREAD([
+#LIBS="$PTHREAD_LIBS $LIBS"
+CXXFLAGS="$CXXFLAGS -pthread"
+#CC="$PTHREAD_CC"
+#  ], [
+#    AC_MSG_ERROR([Could not configure pthreads support])
+#])
 
 # Checks for header files.
 AC_CHECK_HEADERS([ \
@@ -121,7 +121,7 @@ has_libpci=0
 PKG_CHECK_MODULES([PCIUTILS], [libpci],[has_libpci=1], [
 	AC_SEARCH_LIBS([pci_get_dev], [pci],[has_libpci=1], [has_libpci=0])
 ])
- 
+
 
 has_libnl_ver=0
 dnl libnl-2 provides only libnl-2.0.pc file, so we check for separate
@@ -142,8 +142,8 @@ AS_IF([test "$has_libpci" -eq 0], [
 	AC_DEFINE([HAVE_NO_PCI], [1], [Define if pci is not supported])
         AC_MSG_WARN([
 			************* LIBPCI SUPPORT NOT CONFIGURED**************
-			If you need or want pci support, please install libpci 
-			and re-configure PowerTOP. 
+			If you need or want pci support, please install libpci
+			and re-configure PowerTOP.
 			*********************************************************
 	])
 ])
