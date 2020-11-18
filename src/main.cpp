@@ -361,8 +361,6 @@ static void powertop_init(int auto_tune)
 	rlmt.rlim_cur = rlmt.rlim_max = get_nr_open();
 	setrlimit (RLIMIT_NOFILE, &rlmt);
 
-	if (system("/sbin/modprobe cpufreq_stats > /dev/null 2>&1"))
-		fprintf(stderr, _("modprobe cpufreq_stats failed"));
 #if defined(__i386__) || defined(__x86_64__)
 	if (system("/sbin/modprobe msr > /dev/null 2>&1"))
 		fprintf(stderr, _("modprobe msr failed"));
