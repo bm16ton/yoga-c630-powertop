@@ -476,20 +476,20 @@ void abstract_cpu::wiggle(void)
 	ifile >> setspeed;
 	ifile.close();
 
-/*	ofile.open(filename, ios::out);
+	ofile.open(filename, ios::out);
 	ofile << maxf;
 	ofile.close();
 	ofile.open(filename, ios::out);
 	ofile << minf;
 	ofile.close();
-	snprintf(filename, sizeof(filename), "/sys/devices/system/cpu/cpu%i/cpufreq/scaling_max_freq", first_cpu);
+//	snprintf(filename, sizeof(filename), "/sys/devices/system/cpu/cpu%i/cpufreq/scaling_max_freq", first_cpu);
 	ofile.open(filename, ios::out);
 	ofile << minf;
 	ofile.close();
 	ofile.open(filename, ios::out);
 	ofile << maxf;
 	ofile.close();
-*/
+
 	if (setspeed != 0) {
 		snprintf(filename, sizeof(filename), "/sys/devices/system/cpu/cpu%i/cpufreq/scaling_setspeed", first_cpu);
 		ofile.open(filename, ios::out);
